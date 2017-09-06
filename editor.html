@@ -1,0 +1,2278 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title>AMP DirectMail</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="apple-touch-icon" href="pages/ico/60.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="pages/ico/76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="pages/ico/120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="pages/ico/152.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- BEGIN Vendor CSS-->
+    <link href="assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/bootstrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/jquery-scrollbar/jquery.scrollbar.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="assets/plugins/bootstrap-select2/select2.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="assets/plugins/switchery/css/switchery.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <link type="text/css" rel="stylesheet" href="assets/plugins/bootstrap3-wysihtml5/bootstrap3-wysihtml5.min.css" />
+    <link type="text/css" rel="stylesheet" href="assets/plugins/summernote/css/summernote.css" />
+    <!-- BEGIN Pages CSS-->
+    <link href="pages/css/pages-icons.css" rel="stylesheet" type="text/css">
+    <link class="main-stylesheet" href="pages/css/pages.css" rel="stylesheet" type="text/css" />
+    <!--[if lte IE 9]>
+        <link href="pages/css/ie9.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <script type="text/javascript">
+    window.onload = function()
+    {
+      // fix for windows 8
+      if (navigator.appVersion.indexOf("Windows NT 6.2") != -1)
+        document.head.innerHTML += '<link rel="stylesheet" type="text/css" href="pages/css/windows.chrome.fix.css" />'
+    }
+    </script>
+  </head>
+  <body class="fixed-header menu-behind">
+    <!-- BEGIN SIDEBAR -->
+    <div class="page-sidebar" data-pages="sidebar">
+      <div id="appMenu" class="sidebar-overlay-slide from-top">
+      </div>
+      <!-- BEGIN SIDEBAR HEADER -->
+      <div class="sidebar-header">
+        <img src="assets/img/logo_white.png" alt="logo" class="brand" data-src="assets/img/logo_white.png" data-src-retina="assets/img/logo_white_2x.png" width="78" height="22">
+        <div class="sidebar-header-controls">
+          <button data-pages-toggle="#appMenu" class="btn btn-xs sidebar-slide-toggle btn-link m-l-20" type="button"><i class="fa fa-angle-down fs-16"></i>
+          </button>
+          <button data-toggle-pin="sidebar" class="btn btn-link visible-lg-inline" type="button"><i class="fa fs-12"></i>
+          </button>
+        </div>
+      </div>
+      <!-- END SIDEBAR HEADER -->
+
+      <!-- BEGIN SIDEBAR MENU -->
+      <div class="sidebar-menu">
+        <ul class="menu-items">
+          <li class="m-t-30">
+            <a href="index.html" class="detailed">
+              <span class="title">Dashboard</span>
+              <!--<span class="details">234 notifications</span>-->
+            </a>
+            <span class="icon-thumbnail "><i class="pg-charts"></i></span>
+          </li>
+          <li class="">
+            <a href="mailings.html">
+              <span class="title">Mailings</span>
+            </a>
+            <span class="icon-thumbnail "><i class="fa fa-send"></i></span>
+          </li>
+          <li class="">
+            <a href="javascript:;">
+              <span class="title">Templates</span>
+              <span class=" arrow"></span>
+            </a>
+              <!-- submenu -->
+              <span class="icon-thumbnail"><i class="pg-layouts"></i></span>
+              <ul class="sub-menu">
+                <li class="">
+                  <a href="templates.html">Templates</a>
+                  <span class="icon-thumbnail"><i class="pg-layouts"></i></span>
+                </li>                
+                <li class="">
+                  <a href="assets.html">Asset Library</a>
+                  <span class="icon-thumbnail"><i class="pg-image"></i></span>
+                </li>
+              </ul>
+          </li>
+          <li class="">
+            <a href="lists.html">
+              <span class="title">Lists</span>
+            </a>
+            <span class="icon-thumbnail "><i class="pg-layouts4"></i></span>
+          </li>          
+        </ul>  
+        <div class="clearfix"></div>
+      </div>
+      <!-- END SIDEBAR MENU -->
+    </div>
+    <!-- END SIDEBAR -->
+
+
+    <!-- START PAGE-CONTAINER -->
+    <div class="page-container">
+      <!-- START PAGE HEADER WRAPPER -->
+      <!-- START HEADER -->
+      <div class="header ">
+        <!-- START MOBILE CONTROLS -->
+        <div class="container-fluid relative">
+          <!-- LEFT SIDE -->
+          <div class="pull-left full-height visible-sm visible-xs">
+            <!-- START ACTION BAR -->
+            <div class="header-inner">
+              <a href="#" class="btn-link toggle-sidebar visible-sm-inline-block visible-xs-inline-block padding-5" data-toggle="sidebar">
+                <span class="icon-set menu-hambuger"></span>
+              </a>
+            </div>
+            <!-- END ACTION BAR -->
+          </div>
+          <div class="pull-center hidden-md hidden-lg">
+            <div class="header-inner">
+              <div class="brand inline">
+                <img src="assets/img/logo.png" alt="logo" data-src="assets/img/logo.png" data-src-retina="assets/img/logo_2x.png">
+              </div>
+            </div>
+          </div>
+          <!-- RIGHT SIDE -->
+          <div class="pull-right full-height visible-sm visible-xs">
+            <!-- START ACTION BAR -->
+            <div class="header-inner">
+              <a href="#" class="btn-link visible-sm-inline-block visible-xs-inline-block" data-toggle="quickview" data-toggle-element="#quickview">
+                <span class="icon-set menu-hambuger-plus"></span>
+              </a>
+            </div>
+            <!-- END ACTION BAR -->
+          </div>
+        </div>
+        <!-- END MOBILE CONTROLS -->
+
+        <div class=" pull-left sm-table hidden-xs hidden-sm">
+          <div class="header-inner">
+            <div class="brand inline">
+              <img src="assets/img/logo.png" alt="logo" data-src="assets/img/logo.png" data-src-retina="assets/img/logo_2x.png">
+            </div>
+
+            <!-- START NOTIFICATION LIST -->
+            <!--<ul class="notification-list no-margin hidden-sm hidden-xs b-grey b-l b-r no-style p-l-30 p-r-20">
+              <li class="p-r-15 inline">
+                <div class="dropdown">
+                  <a href="javascript:;" id="notification-center" class="icon-set globe-fill" data-toggle="dropdown">
+                    <span class="bubble"></span>
+                  </a>
+
+                  <div class="dropdown-menu notification-toggle" role="menu" aria-labelledby="notification-center">
+                    <div class="notification-panel">
+                      <div class="notification-body scrollable">
+                        <div class="notification-item unread clearfix">
+                          <div class="heading open">
+                            <a href="#" class="text-complete pull-left">
+                              <i class="pg-map fs-16 m-r-10"></i>
+                              <span class="bold">Carrot Design</span>
+                              <span class="fs-12 m-l-10">David Nester</span>
+                            </a>
+                            <div class="pull-right">
+                              <div class="thumbnail-wrapper d16 circular inline m-t-15 m-r-10 toggle-more-details">
+                                <div><i class="fa fa-angle-left"></i>
+                                </div>
+                              </div>
+                              <span class=" time">few sec ago</span>
+                            </div>
+                            <div class="more-details">
+                              <div class="more-details-inner">
+                                <h5 class="semi-bold fs-16">“Apple’s Motivation - Innovation <br> 
+                                                            distinguishes between <br>
+                                                            A leader and a follower.”</h5>
+                                <p class="small hint-text">
+                                  Commented on john Smiths wall.
+                                  <br> via pages framework.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="option" data-toggle="tooltip" data-placement="left" title="mark as read">
+                            <a href="#" class="mark"></a>
+                          </div>
+                        </div>
+
+                        <div class="notification-item  clearfix">
+                          <div class="heading">
+                            <a href="#" class="text-danger pull-left">
+                              <i class="fa fa-exclamation-triangle m-r-10"></i>
+                              <span class="bold">98% Server Load</span>
+                              <span class="fs-12 m-l-10">Take Action</span>
+                            </a>
+                            <span class="pull-right time">2 mins ago</span>
+                          </div>
+                          <div class="option">
+                            <a href="#" class="mark"></a>
+                          </div>
+                        </div>
+
+                        <div class="notification-item  clearfix">
+                          <div class="heading">
+                            <a href="#" class="text-warning-dark pull-left">
+                              <i class="fa fa-exclamation-triangle m-r-10"></i>
+                              <span class="bold">Warning Notification</span>
+                              <span class="fs-12 m-l-10">Buy Now</span>
+                            </a>
+                            <span class="pull-right time">yesterday</span>
+                          </div>
+                          <div class="option">
+                            <a href="#" class="mark"></a>
+                          </div>
+                        </div>
+
+                        <div class="notification-item unread clearfix">
+                          <div class="heading">
+                            <div class="thumbnail-wrapper d24 circular b-white m-r-5 b-a b-white m-t-10 m-r-10">
+                              <img width="30" height="30" data-src-retina="assets/img/profiles/1x.jpg" data-src="assets/img/profiles/1.jpg" alt="" src="assets/img/profiles/1.jpg">
+                            </div>
+                            <a href="#" class="text-complete pull-left">
+                              <span class="bold">avanzado Design Labs</span>
+                              <span class="fs-12 m-l-10">Owners</span>
+                            </a>
+                            <span class="pull-right time">11:00pm</span>
+                          </div>
+                          <div class="option" data-toggle="tooltip" data-placement="left" title="mark as read">
+                            <a href="#" class="mark"></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="notification-footer text-center">
+                        <a href="#" class="">Read all notifications</a>
+                        <a data-toggle="refresh" class="portlet-refresh text-black pull-right" href="#">
+                          <i class="pg-refresh_new"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="p-r-15 inline">
+                <a href="#" class="icon-set clip "></a>
+              </li>
+              <li class="p-r-15 inline">
+                <a href="#" class="icon-set grid-box"></a>
+              </li>
+            </ul>-->
+            <!-- END NOTIFICATIONS LIST -->
+            
+            <a href="#" class="search-link" data-toggle="search"><i class="pg-search"></i>Type anywhere to <span class="bold">search</span></a> </div>
+        </div>
+
+        <div class=" pull-right">
+          <div class="header-inner">
+            <a href="#" class="btn-link icon-set menu-hambuger-plus m-l-20 sm-no-margin hidden-sm hidden-xs" data-toggle="quickview" data-toggle-element="#quickview"></a>
+          </div>
+        </div>
+
+        <div class=" pull-right">
+          <!-- START User Info-->
+          <div class="visible-lg visible-md m-t-10">
+            <div class="pull-left p-r-10 p-t-5 text-right" style="line-height:16px;">
+              <span class="fs-16 font-heading bold">Jim</span> <span class="fs-16 font-heading text-master">Champion</span><br/>
+              <span class="small">All Star Automotive Group</span>
+            </div>
+
+            <div class="dropdown pull-right">
+              <button class="profile-dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="thumbnail-wrapper d32 circular inline m-t-5">
+                    <img src="assets/img/profiles/avatar.png" alt="" data-src="assets/img/profiles/avatar.png" data-src-retina="assets/img/profiles/avatar_small2x.png" width="32" height="32">
+                </span>
+              </button>
+              <ul class="dropdown-menu profile-dropdown" role="menu">
+                <li><a href="dealerprofile.html"><i class="fa fa-user"></i> Profile</a></li>
+                <li><a href="settings.html"><i class="pg-settings_small"></i> Settings</a></li>
+                <li><a href="#"><i class="fa fa-question-circle"></i> Help</a></li>
+                <li class="bg-master-lighter">
+                  <a href="login.html" class="clearfix">
+                    <span class="pull-left">Logout</span>
+                    <span class="pull-right"><i class="pg-power"></i></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- END User Info-->
+        </div>
+      </div>
+      <!-- END HEADER -->
+      <!-- END PAGE HEADER WRAPPER -->
+     
+     
+      <!-- START PAGE CONTENT WRAPPER -->
+      <div class="page-content-wrapper">
+        <!-- START PAGE CONTENT -->
+        <div class="content">
+
+          <!-- ribbon for when not creating a mailing -->
+          <!--
+          <div class="ribbon">
+            <div class="col-sm-9 full-height">
+              <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li>Templates</li>
+                <li><a href="templates.html" class="active">TEMPLATES</a></li>
+              </ul>
+              <h5 class="page-title">Templates</h5>
+            </div>
+            <div class="col-sm-3 full-height border-left p-t-20 text-center">
+            </div>
+          </div>
+          -->
+
+          <!-- ribbon for creating a mailing -->
+          <div class="ribbon">
+            <div class="col-sm-5 full-height">
+              <span class="small">CAMPAIGN NAME</span>
+              <h5 class="page-title">My Spring Sale</h5>
+            </div>
+
+            <div class="col-sm-2 full-height border-left">
+              <span class="small">TEMPLATE</span>
+              <h5 class="page-title semi-bold">Template One</h5>
+            </div>
+
+            <div class="col-sm-2 full-height border-left">
+              <span class="small">RECIPIENTS</span>
+              <h5 class="page-title semi-bold">--</h5>
+            </div>
+
+            <div class="col-sm-3 full-height border-left">
+              <span class="small">YOUR PROGRESS</span>
+              <div class="p-t-10">
+                <div class="progress">
+                  <div data-percentage="0%" style="width: 50%;" class="progress-bar progress-bar-success" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--
+          <div class="jumbotron" data-pages="parallax" style="margin-bottom:0;">
+            <div class="container-fluid container-fixed-lg">
+              <div class="inner" style="transform: translateY(0px); opacity: 1;">
+                <ul class="breadcrumb">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="templates.html">Templates</a></li>
+                  <li><a href="editor.html" class="active">customize your mailing</a></li>
+                </ul>
+
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                      <a id="instruction" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="">
+                        How to customize your mailing <i id="collapsearrow" class="pg-arrow_minimize_line" style="display:none"></i>
+                      </a>
+                    </h4>
+
+                    <div class="pull-right">
+                      <div class="btn-group pull-right m-b-10">
+                        <a href="#" class="btn btn-default btn-cons">Preview</a>
+                        <a href="mailingwizard2.html" class="btn btn-default btn-cons"><span>Previous</span></a>
+                        <a href="mailingwizard4.html" class="btn btn-success btn-cons btn-animated from-left pg-layouts4"><span>Next</span></a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne" aria-expanded="true">
+                    <div class="panel-body">
+
+                      <div class="container-md-height m-b-20">
+                        <div class="row row-md-height">
+                          <div class="col-lg-8 col-md-height col-md-6 col-top">
+                            <div class="panel panel-transparent">                              
+                              <div class="panel-body">
+                                <h3>Design and customize your mailing.</h3>
+                                <p>Lorem ipsum dolor sit amet, dolore soluta abhorreant sed ne, cu vel quas dictas reprehendunt, cu mundi copiosae sententiae ius. 
+                                  Blandit copiosae te vix, ut verear percipit pro, vix graecis facilisis ad.</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 col-md-height col-md-6 col-top">
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          -->
+
+                        
+          <div class="container-fluid bg-darker">
+              <div style="height:700px">
+              
+                  <div class="tab-content">
+                      <div class="p-t-10" style="height:50px">
+                        <div class="col-sm-3 p-t-10">
+                          <span id="panellabel">
+                            <a href="" class="active">Front</a>
+                            <span class="divider">|</span>
+                            <a href="">Back</a>
+                          </span>
+                        </div>
+                        <div class="col-sm-5">
+                          <span class="edit-items">
+                            <span class="panel-title color1">SECTIONS</span> 
+                            <a href="javascript:void(0);" data-original-title="Headline" data-toggle="modal" data-target="#modalTextEdit"><span class="label">1</span></a>
+                            <a href="javascript:void(0);" data-original-title="Paragraph" data-toggle="modal" data-target="#modalTextEdit"><span class="label">2</span></a>
+                            <a href="javascript:void(0);" data-original-title="Logo image" data-toggle="modal" data-target="#modalImageEdit"><span class="label label-info">3</span></a>
+                            <a href="javascript:void(0);" data-original-title="Mailing address" data-toggle="modal" data-target="#modalTextEdit"><span class="label">4</span></a>
+                          </span>
+                        </div>
+                        <div class="col-sm-4 pull-right text-right">
+                          <button id="btnPreview" type="button" class="btn btn-default btn-cons">Preview</button>
+                          <a href="mailingwizard3.html" id="btnNext" class="btn btn-primary dark btn-cons">Next</a>
+                        </div>
+                      </div>
+
+                      <div class="tab-pane fade in active m-t-20 clear" id="position-bar">
+
+                          <div class="mailpreview bg-white shadow">
+
+                            <div class="pull-top">
+                              <div id="text1" class="position pull-left editable" data-toggle="modal" data-target="#modalTextEdit" style="border: 1px solid transparent;width: 50%;height: 450px;margin: 20px;">
+                                <h4>Lorem ipsum dolor</h4>
+                                Lorem ipsum dolor sit amet, dolore soluta abhorreant sed ne, cu vel quas dictas reprehendunt, cu mundi copiosae. Lorem ipsum 
+                                dolor sit amet, dolore soluta abhorreant sed ne, cu vel quas dictas reprehendunt, cu mundi copiosae.
+
+                                dolore soluta abhorreant sed ne, cu vel quas dictas reprehendunt, cu mundi copiosae. Lorem ipsum 
+                                dolor sit amet, dolore soluta abhorreant sed ne, cu vel quas dictas reprehendunt, cu mundi copiosae.
+                              </div>
+
+                              <div id="image1" class="position pull-right editable" data-toggle="modal" data-target="#modalImageEdit" style="border: 1px solid transparent;width: 35%;height: 150px;margin: 20px;">
+                                <img src="assets/img/image-placeholder.png" />
+                              </div>
+
+                              <div id="text2" class="position pull-right editable" data-toggle="modal" data-target="#modalTextEdit" style="border: 1px solid transparent;width: 30%;height: 150px;margin: 130px 20px 20px 0;">
+                                Joe Customer<Br/>
+                                5432 Main St<br/>
+                                Farmington, MI 48331
+                              </div>
+                            </div>
+
+                          </div>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+
+
+          </div>
+        </div>
+        <!-- END PAGE CONTENT -->
+
+
+        <!-- START FOOTER -->
+        <div class="container-fluid container-fixed-lg footer">
+          <div class="copyright sm-text-center">
+            <p class="small no-margin pull-left sm-pull-reset">
+              <span class="hint-text">Copyright © 2016</span>
+              <span class="font-montserrat">avanzado</span>.
+              <span class="hint-text">All rights reserved.</span>
+              <span class="sm-block"><a href="#" class="m-l-10 m-r-10">Terms of use</a> | <a href="#" class="m-l-10">Privacy Policy</a></span>
+            </p>
+            <!--
+            <p class="small no-margin pull-right sm-pull-reset">
+              <a href="#">Hand-crafted</a>
+              <span class="hint-text">&amp; Made with Love ®</span>
+            </p>
+            -->
+            <div class="clearfix"></div>
+          </div>
+        </div>
+        <!-- END FOOTER -->
+      </div>
+      <!-- END PAGE CONTENT WRAPPER -->
+    </div>
+    <!-- END PAGE CONTAINER -->
+
+    <!--START QUICKVIEW -->
+    <div id="quickview" class="quickview-wrapper" data-pages="quickview">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs">
+        <li class="">
+          <a href="#quickview-notes" data-toggle="tab">Notes</a>
+        </li>
+        <li>
+          <a href="#quickview-alerts" data-toggle="tab">Alerts</a>
+        </li>
+        <li class="active">
+          <a href="#quickview-chat" data-toggle="tab">Chat</a>
+        </li>
+      </ul>
+      <a class="btn-link quickview-toggle" data-toggle-element="#quickview" data-toggle="quickview"><i class="pg-close"></i></a>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <!-- BEGIN Notes !-->
+        <div class="tab-pane fade  in no-padding" id="quickview-notes">
+          <div class="view-port clearfix quickview-notes" id="note-views">
+            <!-- BEGIN Note List !-->
+            <div class="view list" id="quick-note-list">
+              <div class="toolbar clearfix">
+                <ul class="pull-right ">
+                  <li>
+                    <a href="#" class="delete-note-link"><i class="fa fa-trash-o"></i></a>
+                  </li>
+                  <li>
+                    <a href="#" class="new-note-link" data-navigate="view" data-view-port="#note-views" data-view-animation="push"><i class="fa fa-plus"></i></a>
+                  </li>
+                </ul>
+                <button class="btn-remove-notes btn btn-xs btn-block" style="display:none"><i class="fa fa-times"></i> Delete</button>
+              </div>
+              <ul>
+                <!-- BEGIN Note Item !-->
+                <li data-noteid="1" data-navigate="view" data-view-port="#note-views" data-view-animation="push">
+                  <div class="left">
+                    <!-- BEGIN Note Action !-->
+                    <div class="checkbox check-warning no-margin">
+                      <input id="qncheckbox1" type="checkbox" value="1">
+                      <label for="qncheckbox1"></label>
+                    </div>
+                    <!-- END Note Action !-->
+                    <!-- BEGIN Note Preview Text !-->
+                    <p class="note-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                    <!-- BEGIN Note Preview Text !-->
+                  </div>
+                  <!-- BEGIN Note Details !-->
+                  <div class="right pull-right">
+                    <!-- BEGIN Note Date !-->
+                    <span class="date">12/12/14</span>
+                    <a href="#"><i class="fa fa-chevron-right"></i></a>
+                    <!-- END Note Date !-->
+                  </div>
+                  <!-- END Note Details !-->
+                </li>
+                <!-- END Note List !-->
+              </ul>
+            </div>
+            <!-- END Note List !-->
+            <div class="view note" id="quick-note">
+              <div>
+                <ul class="toolbar">
+                  <li><a href="#" class="close-note-link"><i class="pg-arrow_left"></i></a>
+                  </li>
+                  <li><a href="#" data-action="Bold"><i class="fa fa-bold"></i></a>
+                  </li>
+                  <li><a href="#" data-action="Italic"><i class="fa fa-italic"></i></a>
+                  </li>
+                  <li><a href="#" class=""><i class="fa fa-link"></i></a>
+                  </li>
+                </ul>
+                <div class="body">
+                  <div>
+                    <div class="top">
+                      <span>21st april 2016 2:13am</span>
+                    </div>
+                    <div class="content">
+                      <div class="quick-note-editor full-width full-height js-input" contenteditable="true"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END Notes !-->
+        <!-- BEGIN Alerts !-->
+        <div class="tab-pane fade no-padding" id="quickview-alerts">
+          <div class="view-port clearfix" id="alerts">
+            <!-- BEGIN Alerts View !-->
+            <div class="view bg-white">
+              <!-- BEGIN View Header !-->
+              <div class="navbar navbar-default navbar-sm">
+                <div class="navbar-inner">
+                  <!-- BEGIN Header Controler !-->
+                  <a href="javascript:;" class="inline action p-l-10 link text-master" data-navigate="view" data-view-port="#chat" data-view-animation="push-parrallax">
+                    <i class="pg-more"></i>
+                  </a>
+                  <!-- END Header Controler !-->
+                  <div class="view-heading">
+                    Notications
+                  </div>
+                  <!-- BEGIN Header Controler !-->
+                  <a href="#" class="inline action p-r-10 pull-right link text-master">
+                    <i class="pg-search"></i>
+                  </a>
+                  <!-- END Header Controler !-->
+                </div>
+              </div>
+              <!-- END View Header !-->
+              <!-- BEGIN Alert List !-->
+              <div data-init-list-view="ioslist" class="list-view boreded no-top-border">
+                <!-- BEGIN List Group !-->
+                <div class="list-view-group-container">
+                  <!-- BEGIN List Group Header!-->
+                  <div class="list-view-group-header text-uppercase">
+                    Calendar
+                  </div>
+                  <!-- END List Group Header!-->
+                  <ul>
+                    <!-- BEGIN List Group Item!-->
+                    <li class="alert-list">
+                      <!-- BEGIN Alert Item Set Animation using data-view-animation !-->
+                      <a href="javascript:;" class="" data-navigate="view" data-view-port="#chat" data-view-animation="push-parrallax">
+                        <p class="col-xs-height col-middle">
+                          <span class="text-warning fs-10"><i class="fa fa-circle"></i></span>
+                        </p>
+                        <p class="p-l-10 col-xs-height col-middle col-xs-9 overflow-ellipsis fs-12">
+                          <span class="text-master">David Nester Birthday</span>
+                        </p>
+                        <p class="p-r-10 col-xs-height col-middle fs-12 text-right">
+                          <span class="text-warning">Today <br></span>
+                          <span class="text-master">All Day</span>
+                        </p>
+                      </a>
+                      <!-- END Alert Item!-->
+                      <!-- BEGIN List Group Item!-->
+                    </li>
+                    <!-- END List Group Item!-->
+                  </ul>
+                </div>
+                <!-- END List Group !-->
+              </div>
+              <!-- END Alert List !-->
+            </div>
+            <!-- EEND Alerts View !-->
+          </div>
+        </div>
+        <!-- END Alerts !-->
+        <div class="tab-pane fade in active no-padding" id="quickview-chat">
+          <div class="view-port clearfix" id="chat">
+            <div class="view bg-white">
+              <!-- BEGIN View Header !-->
+              <div class="navbar navbar-default">
+                <div class="navbar-inner">
+                  <!-- BEGIN Header Controler !-->
+                  <a href="javascript:;" class="inline action p-l-10 link text-master" data-navigate="view" data-view-port="#chat" data-view-animation="push-parrallax">
+                    <i class="pg-plus"></i>
+                  </a>
+                  <!-- END Header Controler !-->
+                  <div class="view-heading">
+                    Chat List
+                    <div class="fs-11">Show All</div>
+                  </div>
+                  <!-- BEGIN Header Controler !-->
+                  <a href="#" class="inline action p-r-10 pull-right link text-master">
+                    <i class="pg-more"></i>
+                  </a>
+                  <!-- END Header Controler !-->
+                </div>
+              </div>
+              <!-- END View Header !-->
+              <div data-init-list-view="ioslist" class="list-view boreded no-top-border">
+                <div class="list-view-group-container">
+                  <div class="list-view-group-header text-uppercase">
+                    a</div>
+                  <ul>
+                    <!-- BEGIN Chat User List Item  !-->
+                    <li class="chat-user-list clearfix">
+                      <a data-view-animation="push-parrallax" data-view-port="#chat" data-navigate="view" class="" href="#">
+                        <span class="col-xs-height col-middle">
+                        <span class="thumbnail-wrapper d32 circular bg-success">
+                            <img width="34" height="34" alt="" data-src-retina="assets/img/profiles/1x.jpg" data-src="assets/img/profiles/1.jpg" src="assets/img/profiles/1x.jpg" class="col-top">
+                        </span>
+                        </span>
+                        <p class="p-l-10 col-xs-height col-middle col-xs-12">
+                          <span class="text-master">ava flores</span>
+                          <span class="block text-master hint-text fs-12">Hello there</span>
+                        </p>
+                      </a>
+                    </li>
+                    <!-- END Chat User List Item  !-->
+                  </ul>
+                </div>
+                <div class="list-view-group-container">
+                  <div class="list-view-group-header text-uppercase">b</div>
+                  <ul>
+                    <!-- BEGIN Chat User List Item  !-->
+                    <li class="chat-user-list clearfix">
+                      <a data-view-animation="push-parrallax" data-view-port="#chat" data-navigate="view" class="" href="#">
+                        <span class="col-xs-height col-middle">
+                        <span class="thumbnail-wrapper d32 circular bg-success">
+                            <img width="34" height="34" alt="" data-src-retina="assets/img/profiles/2x.jpg" data-src="assets/img/profiles/2.jpg" src="assets/img/profiles/2x.jpg" class="col-top">
+                        </span>
+                        </span>
+                        <p class="p-l-10 col-xs-height col-middle col-xs-12">
+                          <span class="text-master">bella mccoy</span>
+                          <span class="block text-master hint-text fs-12">Hello there</span>
+                        </p>
+                      </a>
+                    </li>
+                    <!-- END Chat User List Item  !-->
+                    <!-- BEGIN Chat User List Item  !-->
+                    <li class="chat-user-list clearfix">
+                      <a data-view-animation="push-parrallax" data-view-port="#chat" data-navigate="view" class="" href="#">
+                        <span class="col-xs-height col-middle">
+                        <span class="thumbnail-wrapper d32 circular bg-success">
+                            <img width="34" height="34" alt="" data-src-retina="assets/img/profiles/3x.jpg" data-src="assets/img/profiles/3.jpg" src="assets/img/profiles/3x.jpg" class="col-top">
+                        </span>
+                        </span>
+                        <p class="p-l-10 col-xs-height col-middle col-xs-12">
+                          <span class="text-master">bob stephens</span>
+                          <span class="block text-master hint-text fs-12">Hello there</span>
+                        </p>
+                      </a>
+                    </li>
+                    <!-- END Chat User List Item  !-->
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- BEGIN Conversation View  !-->
+            <div class="view chat-view bg-white clearfix">
+              <!-- BEGIN Header  !-->
+              <div class="navbar navbar-default">
+                <div class="navbar-inner">
+                  <a href="javascript:;" class="link text-master inline action p-l-10" data-navigate="view" data-view-port="#chat" data-view-animation="push-parrallax">
+                    <i class="pg-arrow_left"></i>
+                  </a>
+                  <div class="view-heading">
+                    John Smith
+                    <div class="fs-11 hint-text">Online</div>
+                  </div>
+                  <a href="#" class="link text-master inline action p-r-10 pull-right ">
+                    <i class="pg-more"></i>
+                  </a>
+                </div>
+              </div>
+              <!-- END Header  !-->
+              <!-- BEGIN Conversation  !-->
+              <div class="chat-inner" id="my-conversation">
+                <!-- BEGIN From Me Message  !-->
+                <div class="message clearfix">
+                  <div class="chat-bubble from-me">
+                    Hello there
+                  </div>
+                </div>
+                <!-- END From Me Message  !-->
+                <!-- BEGIN From Them Message  !-->
+                <div class="message clearfix">
+                  <div class="profile-img-wrapper m-t-5 inline">
+                    <img class="col-top" width="30" height="30" src="assets/img/profiles/avatar_small.jpg" alt="" data-src="assets/img/profiles/avatar_small.jpg" data-src-retina="assets/img/profiles/avatar_small2x.jpg">
+                  </div>
+                  <div class="chat-bubble from-them">
+                    Hey
+                  </div>
+                </div>
+                <!-- END From Them Message  !-->
+                <!-- BEGIN From Me Message  !-->
+                <div class="message clearfix">
+                  <div class="chat-bubble from-me">
+                    Did you check out Pages framework ?
+                  </div>
+                </div>
+                <!-- END From Me Message  !-->
+                <!-- BEGIN From Me Message  !-->
+                <div class="message clearfix">
+                  <div class="chat-bubble from-me">
+                    Its an awesome chat
+                  </div>
+                </div>
+                <!-- END From Me Message  !-->
+                <!-- BEGIN From Them Message  !-->
+                <div class="message clearfix">
+                  <div class="profile-img-wrapper m-t-5 inline">
+                    <img class="col-top" width="30" height="30" src="assets/img/profiles/avatar_small.jpg" alt="" data-src="assets/img/profiles/avatar_small.jpg" data-src-retina="assets/img/profiles/avatar_small2x.jpg">
+                  </div>
+                  <div class="chat-bubble from-them">
+                    Yea
+                  </div>
+                </div>
+                <!-- END From Them Message  !-->
+              </div>
+              <!-- BEGIN Conversation  !-->
+              <!-- BEGIN Chat Input  !-->
+              <div class="b-t b-grey bg-white clearfix p-l-10 p-r-10">
+                <div class="row">
+                  <div class="col-xs-1 p-t-15">
+                    <a href="#" class="link text-master"><i class="fa fa-plus-circle"></i></a>
+                  </div>
+                  <div class="col-xs-8 no-padding">
+                    <input type="text" class="form-control chat-input" data-chat-input="" data-chat-conversation="#my-conversation" placeholder="Say something">
+                  </div>
+                  <div class="col-xs-2 link text-master m-l-10 m-t-15 p-l-10 b-l b-grey col-top">
+                    <a href="#" class="link text-master"><i class="pg-camera"></i></a>
+                  </div>
+                </div>
+              </div>
+              <!-- END Chat Input  !-->
+            </div>
+            <!-- END Conversation View  !-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END QUICKVIEW-->
+
+
+    <!-- START OVERLAY -->
+    <div class="overlay" style="display: none" data-pages="search">
+      <!-- BEGIN Overlay Content !-->
+      <div class="overlay-content has-results m-t-20">
+        <!-- BEGIN Overlay Header !-->
+        <div class="container-fluid">
+          <!-- BEGIN Overlay Logo !-->
+          <img class="overlay-brand" src="assets/img/logo.png" alt="logo" data-src="assets/img/logo.png" data-src-retina="assets/img/logo_2x.png">
+          <!-- END Overlay Logo !-->
+          <!-- BEGIN Overlay Close !-->
+          <a href="#" class="close-icon-light overlay-close text-black fs-16">
+            <i class="pg-close"></i>
+          </a>
+          <!-- END Overlay Close !-->
+        </div>
+        <!-- END Overlay Header !-->
+        <div class="container-fluid">
+          <!-- BEGIN Overlay Controls !-->
+          <input id="overlay-search" class="no-border overlay-search bg-transparent" placeholder="Search..." autocomplete="off" spellcheck="false">
+          <br>
+          <div class="inline-block">
+            <div class="checkbox right">
+              <input id="checkboxn" type="checkbox" value="1" checked="checked">
+              <label for="checkboxn"><i class="fa fa-search"></i> Search within page</label>
+            </div>
+          </div>
+          <div class="inline-block m-l-10">
+            <p class="fs-13">Press enter to search</p>
+          </div>
+          <!-- END Overlay Controls !-->
+        </div>
+        <!-- BEGIN Overlay Search Results, This part is for demo purpose, you can add anything you like !-->
+        <div class="container-fluid">
+          <span>
+                <strong>suggestions :</strong>
+            </span>
+          <span id="overlay-suggestions"></span>
+          <br>
+          <div class="search-results m-t-40">
+            <p class="bold">Pages Search Results</p>
+            <div class="row">
+              <div class="col-md-6">
+                <!-- BEGIN Search Result Item !-->
+                <div class="">
+                  <!-- BEGIN Search Result Item Thumbnail !-->
+                  <div class="thumbnail-wrapper d48 circular bg-success text-white inline m-t-10">
+                    <div>
+                      <img width="50" height="50" src="assets/img/profiles/avatar.jpg" data-src="assets/img/profiles/avatar.jpg" data-src-retina="assets/img/profiles/avatar2x.jpg" alt="">
+                    </div>
+                  </div>
+                  <!-- END Search Result Item Thumbnail !-->
+                  <div class="p-l-10 inline p-t-5">
+                    <h5 class="m-b-5"><span class="semi-bold result-name">ice cream</span> on pages</h5>
+                    <p class="hint-text">via john smith</p>
+                  </div>
+                </div>
+                <!-- END Search Result Item !-->
+                <!-- BEGIN Search Result Item !-->
+                <div class="">
+                  <!-- BEGIN Search Result Item Thumbnail !-->
+                  <div class="thumbnail-wrapper d48 circular bg-success text-white inline m-t-10">
+                    <div>T</div>
+                  </div>
+                  <!-- END Search Result Item Thumbnail !-->
+                  <div class="p-l-10 inline p-t-5">
+                    <h5 class="m-b-5"><span class="semi-bold result-name">ice cream</span> related topics</h5>
+                    <p class="hint-text">via pages</p>
+                  </div>
+                </div>
+                <!-- END Search Result Item !-->
+                <!-- BEGIN Search Result Item !-->
+                <div class="">
+                  <!-- BEGIN Search Result Item Thumbnail !-->
+                  <div class="thumbnail-wrapper d48 circular bg-success text-white inline m-t-10">
+                    <div><i class="fa fa-headphones large-text "></i>
+                    </div>
+                  </div>
+                  <!-- END Search Result Item Thumbnail !-->
+                  <div class="p-l-10 inline p-t-5">
+                    <h5 class="m-b-5"><span class="semi-bold result-name">ice cream</span> music</h5>
+                    <p class="hint-text">via pagesmix</p>
+                  </div>
+                </div>
+                <!-- END Search Result Item !-->
+              </div>
+              <div class="col-md-6">
+                <!-- BEGIN Search Result Item !-->
+                <div class="">
+                  <!-- BEGIN Search Result Item Thumbnail !-->
+                  <div class="thumbnail-wrapper d48 circular bg-info text-white inline m-t-10">
+                    <div><i class="fa fa-facebook large-text "></i>
+                    </div>
+                  </div>
+                  <!-- END Search Result Item Thumbnail !-->
+                  <div class="p-l-10 inline p-t-5">
+                    <h5 class="m-b-5"><span class="semi-bold result-name">ice cream</span> on facebook</h5>
+                    <p class="hint-text">via facebook</p>
+                  </div>
+                </div>
+                <!-- END Search Result Item !-->
+                <!-- BEGIN Search Result Item !-->
+                <div class="">
+                  <!-- BEGIN Search Result Item Thumbnail !-->
+                  <div class="thumbnail-wrapper d48 circular bg-complete text-white inline m-t-10">
+                    <div><i class="fa fa-twitter large-text "></i>
+                    </div>
+                  </div>
+                  <!-- END Search Result Item Thumbnail !-->
+                  <div class="p-l-10 inline p-t-5">
+                    <h5 class="m-b-5">Tweats on<span class="semi-bold result-name"> ice cream</span></h5>
+                    <p class="hint-text">via twitter</p>
+                  </div>
+                </div>
+                <!-- END Search Result Item !-->
+                <!-- BEGIN Search Result Item !-->
+                <div class="">
+                  <!-- BEGIN Search Result Item Thumbnail !-->
+                  <div class="thumbnail-wrapper d48 circular text-white bg-danger inline m-t-10">
+                    <div><i class="fa fa-google-plus large-text "></i>
+                    </div>
+                  </div>
+                  <!-- END Search Result Item Thumbnail !-->
+                  <div class="p-l-10 inline p-t-5">
+                    <h5 class="m-b-5">Circles on<span class="semi-bold result-name"> ice cream</span></h5>
+                    <p class="hint-text">via google plus</p>
+                  </div>
+                </div>
+                <!-- END Search Result Item !-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END Overlay Search Results !-->
+      </div>
+      <!-- END Overlay Content !-->
+    </div>
+    <!-- END OVERLAY -->
+
+    <!-- Modal edit text -->
+    <div class="modal fade slide-right dark" id="modalTextEdit" tabindex="-1" role="dialog" aria-labelledby="modalTextEdit">
+        <div class="modal-dialog">
+            <div class="modal-content fullheight">
+            <div class="modal-header clearfix ">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="pg-arrow_lright_line_alt"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="heading">
+                  <h5><span class="semi-bold">Text</span> Editor</h5>
+                </div>
+
+                <form role="form">
+
+                <div class="panel-title">TEXT</div>
+
+                <div class="form-group">
+                  <label for="fname" class="col-sm-3 control-label text-right">Name</label>
+                  <div class="col-sm-9">
+                    <span class="form-control-static semi-bold">Headline</span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="lname" class="col-sm-3 control-label text-right">Text</label>
+                  <div class="col-sm-9">
+                    <textarea class="form-control" id="thetext" name="thetext" rows="5" cols="20" placeholder="Type text here">Lorem ipsum dolor sit amet, dolore soluta abhorreant sed ne, cu vel quas dictas reprehendunt, cu mundi copiosae. Lorem ipsum dolor sit amet, dolore soluta abhorreant sed ne, cu vel quas dictas reprehendun</textarea>
+                  </div>
+                </div>              
+
+                <hr/>
+
+                <div class="panel-title">TYPOGRAPHY</div>
+
+                <div class="form-group">
+                  <label for="address" class="col-sm-3 control-label text-right">Font</label>
+                  <div class="col-sm-9">
+                    <select class="form-control">
+                      <option>Arial</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="address" class="col-sm-3 control-label text-right">Size</label>
+                  <div class="col-sm-3">
+                    <select class="form-control">
+                      <option>9</option>
+                      <option>10</option>
+                    </select>
+                  </div>
+                </div>   
+
+                <div class="form-group">
+                  <label for="address" class="col-sm-3 control-label text-right">Align</label>
+                  <div class="col-sm-9">
+                    <div class="btn-group btn-small">
+                      <button type="button" class="btn btn-default"><i class="fa fa-align-left"></i></button>
+                      <button type="button" class="btn btn-default"><i class="fa fa-align-center"></i></button>
+                      <button type="button" class="btn btn-default"><i class="fa fa-align-right"></i></button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="address" class="col-sm-3 control-label text-right">Color</label>
+                  <div class="col-sm-9">
+                    <div style="display:inline-block; width:100%;">
+                      <span class="color-swatch one"></span>
+                      <span class="color-swatch two"></span>
+                      <span class="color-swatch three"></span>
+                      <span class="color-swatch four"></span>
+                      <span class="color-swatch five"></span>
+                      <span class="color-swatch six"></span>
+                      <span class="color-swatch seven"></span>
+                      <span class="color-swatch"><img src="pages/img/color-wheel-swatch.png"/></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-sm-offset-3 col-sm-9 p-t-15">
+                    <button id="btnAdd" type="button" class="btn btn-primary dark btn-cons">Save</button>
+                  </div>
+                </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal edit images -->
+    <div class="modal fade slide-right dark" id="modalImageEdit" tabindex="-1" role="dialog" aria-labelledby="modalImageEdit">
+        <div class="modal-dialog large">
+            <div class="modal-content">
+            <div class="modal-header clearfix ">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="pg-arrow_lright_line_alt"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="heading">
+                  <h5><span class="semi-bold">Image</span> Editor
+                    <div class="pull-right">
+                      <div class="btn-groupx pull-right m-b-10 m-r-30">
+                        <!--<a href="#" class="btn btn-default btn-cons">Preview</a>-->
+                        <a href="file-upload.html" class="btn btn-primary dark btn-cons"><span>Upload</span></a>
+                      </div>
+                    </div>                  
+                  </h5>
+                </div>
+
+                <form role="form">
+                <div class="panel-title">IMAGES</div>
+
+                <div class="panel-body no-scroll55">
+
+                  <div class="row margin-b-2">
+                    <div class="col-sm-4 col-md-2">
+                      <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                      <div class="caption">Image title</div>
+                    </div>
+                    <div class="col-sm-4 col-md-2">
+                      <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                      <div class="caption">Image title</div>
+                    </div>
+                    <div class="col-sm-4 col-md-2">
+                      <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                      <div class="caption">Image title</div>
+                    </div>
+                    <div class="col-sm-4 col-md-2">
+                      <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                      <div class="caption">Image title</div>
+                    </div>
+                    <div class="col-sm-4 col-md-2">
+                      <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                      <div class="caption">Image title</div>
+                    </div>
+                    <div class="col-sm-4 col-md-2">
+                      <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                      <div class="caption">Image title</div>
+                    </div>
+                  </div>
+                  <!-- /.row -->
+
+                  <div class="row margin-b-2">
+                    <div class="col-sm-4 col-md-2">
+                      <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                      <div class="caption">Image title</div>
+                    </div>
+                    <div class="col-sm-4 col-md-2">
+                      <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                      <div class="caption">Image title</div>
+                    </div>
+                    <div class="col-sm-4 col-md-2">
+                      <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                      <div class="caption">Image title</div>
+                    </div>
+                    <div class="col-sm-4 col-md-2">
+                      <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                      <div class="caption">Image title</div>
+                    </div>
+                    <div class="col-sm-4 col-md-2">
+                      <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                      <div class="caption">Image title</div>
+                    </div>
+                    <div class="col-sm-4 col-md-2">
+                      <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                      <div class="caption">Image title</div>
+                    </div>
+                  </div>
+                  <!-- /.row -->
+
+                  <div class="row margin-b-2">
+                    <div class="col-sm-4 col-md-2">
+                      <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                      <div class="caption">Image title</div>
+                    </div>
+                    <div class="col-sm-4 col-md-2">
+                      <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                      <div class="caption">Image title</div>
+                    </div>
+                    <div class="col-sm-4 col-md-2">
+                      <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                      <div class="caption">Image title</div>
+                    </div>
+                    <div class="col-sm-4 col-md-2">
+                      <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                      <div class="caption">Image title</div>
+                    </div>
+                    <div class="col-sm-4 col-md-2">
+                      <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                      <div class="caption">Image title</div>
+                    </div>
+                    <div class="col-sm-4 col-md-2">
+                      <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                      <div class="caption">Image title</div>
+                    </div>
+                  </div>
+                  <!-- /.row -->
+
+                  <div class="row margin-b-2">
+                    <div class="col-sm-4 col-md-2">
+                      <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                      <div class="caption">Image title</div>
+                    </div>
+                    <div class="col-sm-4 col-md-2">
+                      <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                      <div class="caption">Image title</div>
+                    </div>
+                    <div class="col-sm-4 col-md-2">
+                      <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                      <div class="caption">Image title</div>
+                    </div>
+                    <div class="col-sm-4 col-md-2">
+                      <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                      <div class="caption">Image title</div>
+                    </div>
+                    <div class="col-sm-4 col-md-2">
+                      <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                      <div class="caption">Image title</div>
+                    </div>
+                    <div class="col-sm-4 col-md-2">
+                      <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                      <div class="caption">Image title</div>
+                    </div>
+                  </div>
+
+                </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal text -->
+    <div class="modal fade fill-in" id="modalTextEditxx" tabindex="-1" role="dialog" aria-labelledby="modalTextEditxx" aria-hidden="true">
+      <div class="modal-dialog ">
+          <div class="modal-content">
+              <!--
+              <div class="modal-header">
+                  <h5 class="text-left p-b-5"><span class="semi-bold">News letter</span> signup</h5>
+              </div>
+              -->
+              <div class="modal-body">
+
+                <div class="jumbotron" data-pages="parallax">
+                  <div class="container-fluid container-fixed-lg">
+                    <div class="inner" style="transform: translateY(0px); opacity: 1;">
+                      <div class="container-md-height m-b-20">
+                        <div class="row row-md-height">
+                          <div class="col-lg-8 col-md-height col-md-6 col-top">
+                            <div class="panel panel-transparent">
+                              <div class="panel-heading" style="padding: 10px 0px;">
+                                <div class="panel-title"><i class="pg-leftalign"></i> edit the text</div>
+                              </div>
+                              <!--
+                              <div class="panel-body">
+                                <h3>Lorem ipsolr dolem sunor.</h3>
+                                <p>Lorem ipsum dolor sit amet, dolore soluta abhorreant sed ne, cu vel quas dictas reprehendunt, cu mundi copiosae sententiae ius. 
+                                  Blandit copiosae te vix, ut verear percipit pro, vix graecis facilisis ad.</p>
+                              </div>
+                              -->
+                            </div>
+                          </div>
+                          
+                          <div class="col-lg-4 col-md-5 col-md-height">
+                            <span class="pull-right p-t-15">
+                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                  <i class="pg-close"></i>
+                              </button>
+                            </span>                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="container-fluid container-fixed-lg bg-white">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                    <div class="panel-title">Text Editor</div>
+
+                    <div class="tools">
+                      <a class="collapse" href="javascript:;"></a>
+                      <a class="config" data-toggle="modal" href="#grid-config"></a>
+                      <a class="reload" href="javascript:;"></a>
+                      <a class="remove" href="javascript:;"></a>
+                    </div>
+                    </div>
+                    <div class="panel-body no-scroll">
+                      <!--<h5>Summernote</h5>-->
+                      <div class="summernote-wrapper">
+                        <div id="summernote" style="display: none;">Hello Summernote</div>
+
+                        <div class="note-editor">
+                          <div class="note-dropzone">
+                            <div class="note-dropzone-message"></div>
+                          </div>
+                          <div class="note-dialog">
+                            <div class="note-image-dialog modal" aria-hidden="false">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header"><button type="button" class="close" aria-hidden="true" tabindex="-1">×</button>
+                                    <h4 class="modal-title">Insert Image</h4>
+                                  </div>
+                                  <form class="note-modal-form">
+                                    <div class="modal-body">
+                                      <div class="row-fluid">
+                                        <div class="note-group-select-from-files">
+                                          <h5>Select from files</h5><input class="note-image-input" type="file" name="files" accept="image/*"></div>
+                                        <h5>Image URL</h5><input class="note-image-url form-control span12" type="text"></div>
+                                    </div>
+                                    <div class="modal-footer"><button href="#" class="btn btn-primary note-image-btn disabled" disabled="">Insert Image</button></div>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="note-link-dialog modal" aria-hidden="false">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header"><button type="button" class="close" aria-hidden="true" tabindex="-1">×</button>
+                                    <h4 class="modal-title">Insert Link</h4>
+                                  </div>
+                                  <form class="note-modal-form">
+                                    <div class="modal-body">
+                                      <div class="row-fluid">
+                                        <div class="form-group"><label>Text to display</label><input class="note-link-text form-control span12" type="text"></div>
+                                        <div class="form-group"><label>To what URL should this link go?</label><input class="note-link-url form-control span12" type="text"></div>
+                                        <div class="checkbox"><label><input type="checkbox" checked=""> Open in new window</label></div>
+                                      </div>
+                                    </div>
+                                    <div class="modal-footer"><button href="#" class="btn btn-primary note-link-btn disabled" disabled="">Insert Link</button></div>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="note-video-dialog modal" aria-hidden="false">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header"><button type="button" class="close" aria-hidden="true" tabindex="-1">×</button>
+                                    <h4 class="modal-title">Insert Video</h4>
+                                  </div>
+                                  <form class="note-modal-form">
+                                    <div class="modal-body">
+                                      <div class="row-fluid">
+                                        <div class="form-group"><label>Video URL?</label>&nbsp;<small class="text-muted">(YouTube, Vimeo, Vine, Instagram, DailyMotion or Youku)</small>
+                                          <input class="note-video-url form-control span12" type="text"></div>
+                                      </div>
+                                    </div>
+                                    <div class="modal-footer"><button href="#" class="btn btn-primary note-video-btn disabled" disabled="">Insert Video</button></div>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="note-help-dialog modal" aria-hidden="false">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <form class="note-modal-form">
+                                    <div class="modal-body">
+                                      <div class="row-fluid"><a class="modal-close pull-right" aria-hidden="true" tabindex="-1">Close</a>
+                                        <div class="title">Keyboard shortcuts</div>
+                                        <table class="note-shortcut-layout">
+                                          <tbody>
+                                            <tr>
+                                              <td>
+                                                <table class="note-shortcut">
+                                                  <thead>
+                                                    <tr>
+                                                      <th></th>
+                                                      <th>Action</th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr>
+                                                      <td>Ctrl + Z</td>
+                                                      <td>Undo</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>Ctrl + Shift + Z</td>
+                                                      <td>Redo</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>Ctrl + ]</td>
+                                                      <td>Indent</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>Ctrl + [</td>
+                                                      <td>Outdent</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>Ctrl + ENTER</td>
+                                                      <td>Insert Horizontal Rule</td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                              </td>
+                                              <td>
+                                                <table class="note-shortcut">
+                                                  <thead>
+                                                    <tr>
+                                                      <th></th>
+                                                      <th>Text formatting</th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr>
+                                                      <td>Ctrl + B</td>
+                                                      <td>Bold</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>Ctrl + I</td>
+                                                      <td>Italic</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>Ctrl + U</td>
+                                                      <td>Underline</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>Ctrl + Shift + S</td>
+                                                      <td>Strikethrough</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>Ctrl + \</td>
+                                                      <td>Remove Font Style</td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td>
+                                                <table class="note-shortcut">
+                                                  <thead>
+                                                    <tr>
+                                                      <th></th>
+                                                      <th>Document Style</th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr>
+                                                      <td>Ctrl + NUM0</td>
+                                                      <td>Normal</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>Ctrl + NUM1</td>
+                                                      <td>Header 1</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>Ctrl + NUM2</td>
+                                                      <td>Header 2</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>Ctrl + NUM3</td>
+                                                      <td>Header 3</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>Ctrl + NUM4</td>
+                                                      <td>Header 4</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>Ctrl + NUM5</td>
+                                                      <td>Header 5</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>Ctrl + NUM6</td>
+                                                      <td>Header 6</td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                              </td>
+                                              <td>
+                                                <table class="note-shortcut">
+                                                  <thead>
+                                                    <tr>
+                                                      <th></th>
+                                                      <th>Paragraph formatting</th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr>
+                                                      <td>Ctrl + Shift + L</td>
+                                                      <td>Align left</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>Ctrl + Shift + E</td>
+                                                      <td>Align center</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>Ctrl + Shift + R</td>
+                                                      <td>Align right</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>Ctrl + Shift + J</td>
+                                                      <td>Justify full</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>Ctrl + Shift + NUM7</td>
+                                                      <td>Ordered list</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>Ctrl + Shift + NUM8</td>
+                                                      <td>Unordered list</td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                              </td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                        <p class="text-center"><a href="//hackerwins.github.io/summernote/" target="_blank">Summernote 0.5.9</a> · <a href="//github.com/HackerWins/summernote"
+                                            target="_blank">Project</a> · <a href="//github.com/HackerWins/summernote/issues" target="_blank">Issues</a></p>
+                                      </div>
+                                    </div>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="note-handle">
+                            <div class="note-control-selection">
+                              <div class="note-control-selection-bg"></div>
+                              <div class="note-control-holder note-control-nw"></div>
+                              <div class="note-control-holder note-control-ne"></div>
+                              <div class="note-control-holder note-control-sw"></div>
+                              <div class="note-control-sizing note-control-se"></div>
+                              <div class="note-control-selection-info"></div>
+                            </div>
+                          </div>
+                          <div class="note-popover">
+                            <div class="note-link-popover popover bottom in" style="display: none;">
+                              <div class="arrow"></div>
+                              <div class="popover-content"><a href="http://www.google.com" target="_blank">www.google.com</a>&nbsp;&nbsp;
+                                <div class="note-insert btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="showLinkDialog" data-hide="true"
+                                    tabindex="-1" data-original-title="Edit (CTRL+K)"><i class="fa fa-edit icon-edit"></i></button><button type="button"
+                                    class="btn btn-default btn-sm btn-small" title="" data-event="unlink" tabindex="-1" data-original-title="Unlink"><i class="fa fa-unlink icon-unlink"></i></button></div>
+                              </div>
+                            </div>
+                            <div class="note-image-popover popover bottom in" style="display: none;">
+                              <div class="arrow"></div>
+                              <div class="popover-content">
+                                <div class="btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="resize" data-value="1" tabindex="-1"
+                                    data-original-title="Resize Full"><span class="note-fontsize-10">100%</span></button><button type="button" class="btn btn-default btn-sm btn-small"
+                                    title="" data-event="resize" data-value="0.5" tabindex="-1" data-original-title="Resize Half"><span class="note-fontsize-10">50%</span></button>
+                                  <button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="resize" data-value="0.25" tabindex="-1"
+                                    data-original-title="Resize Quarter"><span class="note-fontsize-10">25%</span></button>
+                                </div>
+                                <div class="btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="floatMe" data-value="left" tabindex="-1"
+                                    data-original-title="Float Left"><i class="fa fa-align-left icon-align-left"></i></button><button type="button"
+                                    class="btn btn-default btn-sm btn-small" title="" data-event="floatMe" data-value="right" tabindex="-1" data-original-title="Float Right"><i class="fa fa-align-right icon-align-right"></i></button>
+                                  <button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="floatMe" data-value="none" tabindex="-1"
+                                    data-original-title="Float None"><i class="fa fa-align-justify icon-align-justify"></i></button>
+                                </div>
+                                <div class="btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="removeMedia" data-value="none"
+                                    tabindex="-1" data-original-title="Remove Image"><i class="fa fa-trash-o icon-trash"></i></button></div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="note-toolbar btn-toolbar">
+                            <div class="note-style btn-group"><button type="button" class="btn btn-default btn-sm btn-small dropdown-toggle" data-toggle="dropdown" title="" tabindex="-1"
+                                data-original-title="Style"><i class="fa fa-magic icon-magic"></i> <span class="caret"></span></button>
+                              <ul class="dropdown-menu">
+                                <li><a data-event="formatBlock" href="#" data-value="p">Normal</a></li>
+                                <li>
+                                  <a data-event="formatBlock" href="#" data-value="blockquote">
+                                    <blockquote>Quote</blockquote>
+                                  </a>
+                                </li>
+                                <li><a data-event="formatBlock" href="#" data-value="pre">Code</a></li>
+                                <li>
+                                  <a data-event="formatBlock" href="#" data-value="h1">
+                                    <h1>Header 1</h1>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a data-event="formatBlock" href="#" data-value="h2">
+                                    <h2>Header 2</h2>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a data-event="formatBlock" href="#" data-value="h3">
+                                    <h3>Header 3</h3>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a data-event="formatBlock" href="#" data-value="h4">
+                                    <h4>Header 4</h4>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a data-event="formatBlock" href="#" data-value="h5">
+                                    <h5>Header 5</h5>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a data-event="formatBlock" href="#" data-value="h6">
+                                    <h6>Header 6</h6>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="note-font btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="bold" tabindex="-1" data-original-title="Bold (CTRL+B)"><i class="fa fa-bold icon-bold"></i></button>
+                              <button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="italic" tabindex="-1" data-original-title="Italic (CTRL+I)"><i class="fa fa-italic icon-italic"></i></button>
+                              <button
+                                type="button" class="btn btn-default btn-sm btn-small" title="" data-event="underline" tabindex="-1" data-original-title="Underline (CTRL+U)"><i class="fa fa-underline icon-underline"></i></button>
+                                <button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="superscript" tabindex="-1" data-original-title="Superscript"><i class="fa fa-superscript icon-superscript"></i></button>
+                                <button
+                                  type="button" class="btn btn-default btn-sm btn-small" title="" data-event="subscript" tabindex="-1" data-original-title="Subscript"><i class="fa fa-subscript icon-subscript"></i></button>
+                                  <button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="strikethrough" tabindex="-1" data-original-title="Strikethrough (CTRL+SHIFT+S)"><i class="fa fa-strikethrough icon-strikethrough"></i></button>
+                                  <button
+                                    type="button" class="btn btn-default btn-sm btn-small" title="" data-event="removeFormat" tabindex="-1" data-original-title="Remove Font Style (CTRL+\)"><i class="fa fa-eraser icon-eraser"></i></button>
+                            </div>
+                            <div class="note-fontname btn-group"><button type="button" class="btn btn-default btn-sm btn-small dropdown-toggle" data-toggle="dropdown" title="" tabindex="-1"
+                                data-original-title="Font Family"><span class="note-current-fontname">Helvetica Neue</span> <span class="caret"></span></button>
+                              <ul class="dropdown-menu">
+                                <li><a data-event="fontName" href="#" data-value="Arial"><i class="fa fa-check icon-ok"></i> Arial</a></li>
+                                <li><a data-event="fontName" href="#" data-value="Arial Black"><i class="fa fa-check icon-ok"></i> Arial Black</a></li>
+                                <li><a data-event="fontName" href="#" data-value="Comic Sans MS"><i class="fa fa-check icon-ok"></i> Comic Sans MS</a></li>
+                                <li><a data-event="fontName" href="#" data-value="Courier New"><i class="fa fa-check icon-ok"></i> Courier New</a></li>
+                                <li><a data-event="fontName" href="#" data-value="Impact"><i class="fa fa-check icon-ok"></i> Impact</a></li>
+                                <li><a data-event="fontName" href="#" data-value="Tahoma"><i class="fa fa-check icon-ok"></i> Tahoma</a></li>
+                                <li><a data-event="fontName" href="#" data-value="Times New Roman"><i class="fa fa-check icon-ok"></i> Times New Roman</a></li>
+                                <li><a data-event="fontName" href="#" data-value="Verdana"><i class="fa fa-check icon-ok"></i> Verdana</a></li>
+                              </ul>
+                            </div>
+                            <div class="note-color btn-group"><button type="button" class="btn btn-default btn-sm btn-small note-recent-color" title="" data-event="color" data-value="{&quot;backColor&quot;:&quot;yellow&quot;}"
+                                tabindex="-1" data-original-title="Recent Color"><i class="fa fa-font icon-font" style="color:black;background-color:yellow;"></i></button>
+                              <button type="button" class="btn btn-default btn-sm btn-small dropdown-toggle" data-toggle="dropdown" title="" tabindex="-1"
+                                data-original-title="More Color">
+                                                  <span class="caret"></span></button>
+                              <ul class="dropdown-menu">
+                                <li>
+                                  <div class="btn-group">
+                                    <div class="note-palette-title">Background Color</div>
+                                    <div class="note-color-reset" data-event="backColor" data-value="inherit" title="Transparent">Set transparent</div>
+                                    <div class="note-color-palette" data-target-event="backColor">
+                                      <div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#000000;" data-event="backColor" data-value="#000000"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#000000"></button><button type="button"
+                                          class="note-color-btn" style="background-color:#424242;" data-event="backColor" data-value="#424242" title=""
+                                          data-toggle="button" tabindex="-1" data-original-title="#424242"></button><button type="button" class="note-color-btn"
+                                          style="background-color:#636363;" data-event="backColor" data-value="#636363" title="" data-toggle="button"
+                                          tabindex="-1" data-original-title="#636363"></button>
+                                        <button type="button" class="note-color-btn" style="background-color:#9C9C94;" data-event="backColor" data-value="#9C9C94"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#9C9C94"></button>
+                                        <button
+                                          type="button" class="note-color-btn" style="background-color:#CEC6CE;" data-event="backColor" data-value="#CEC6CE"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#CEC6CE"></button>
+                                          <button type="button" class="note-color-btn" style="background-color:#EFEFEF;" data-event="backColor" data-value="#EFEFEF"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#EFEFEF"></button>
+                                          <button
+                                            type="button" class="note-color-btn" style="background-color:#F7F7F7;" data-event="backColor" data-value="#F7F7F7"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#F7F7F7"></button>
+                                            <button type="button" class="note-color-btn" style="background-color:#FFFFFF;" data-event="backColor" data-value="#FFFFFF"
+                                              title="" data-toggle="button" tabindex="-1" data-original-title="#FFFFFF"></button>
+                                      </div>
+                                      <div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#FF0000;" data-event="backColor" data-value="#FF0000"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#FF0000"></button><button type="button"
+                                          class="note-color-btn" style="background-color:#FF9C00;" data-event="backColor" data-value="#FF9C00" title=""
+                                          data-toggle="button" tabindex="-1" data-original-title="#FF9C00"></button><button type="button" class="note-color-btn"
+                                          style="background-color:#FFFF00;" data-event="backColor" data-value="#FFFF00" title="" data-toggle="button"
+                                          tabindex="-1" data-original-title="#FFFF00"></button>
+                                        <button type="button" class="note-color-btn" style="background-color:#00FF00;" data-event="backColor" data-value="#00FF00"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#00FF00"></button>
+                                        <button
+                                          type="button" class="note-color-btn" style="background-color:#00FFFF;" data-event="backColor" data-value="#00FFFF"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#00FFFF"></button>
+                                          <button type="button" class="note-color-btn" style="background-color:#0000FF;" data-event="backColor" data-value="#0000FF"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#0000FF"></button>
+                                          <button
+                                            type="button" class="note-color-btn" style="background-color:#9C00FF;" data-event="backColor" data-value="#9C00FF"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#9C00FF"></button>
+                                            <button type="button" class="note-color-btn" style="background-color:#FF00FF;" data-event="backColor" data-value="#FF00FF"
+                                              title="" data-toggle="button" tabindex="-1" data-original-title="#FF00FF"></button>
+                                      </div>
+                                      <div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#F7C6CE;" data-event="backColor" data-value="#F7C6CE"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#F7C6CE"></button><button type="button"
+                                          class="note-color-btn" style="background-color:#FFE7CE;" data-event="backColor" data-value="#FFE7CE" title=""
+                                          data-toggle="button" tabindex="-1" data-original-title="#FFE7CE"></button><button type="button" class="note-color-btn"
+                                          style="background-color:#FFEFC6;" data-event="backColor" data-value="#FFEFC6" title="" data-toggle="button"
+                                          tabindex="-1" data-original-title="#FFEFC6"></button>
+                                        <button type="button" class="note-color-btn" style="background-color:#D6EFD6;" data-event="backColor" data-value="#D6EFD6"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#D6EFD6"></button>
+                                        <button
+                                          type="button" class="note-color-btn" style="background-color:#CEDEE7;" data-event="backColor" data-value="#CEDEE7"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#CEDEE7"></button>
+                                          <button type="button" class="note-color-btn" style="background-color:#CEE7F7;" data-event="backColor" data-value="#CEE7F7"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#CEE7F7"></button>
+                                          <button
+                                            type="button" class="note-color-btn" style="background-color:#D6D6E7;" data-event="backColor" data-value="#D6D6E7"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#D6D6E7"></button>
+                                            <button type="button" class="note-color-btn" style="background-color:#E7D6DE;" data-event="backColor" data-value="#E7D6DE"
+                                              title="" data-toggle="button" tabindex="-1" data-original-title="#E7D6DE"></button>
+                                      </div>
+                                      <div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#E79C9C;" data-event="backColor" data-value="#E79C9C"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#E79C9C"></button><button type="button"
+                                          class="note-color-btn" style="background-color:#FFC69C;" data-event="backColor" data-value="#FFC69C" title=""
+                                          data-toggle="button" tabindex="-1" data-original-title="#FFC69C"></button><button type="button" class="note-color-btn"
+                                          style="background-color:#FFE79C;" data-event="backColor" data-value="#FFE79C" title="" data-toggle="button"
+                                          tabindex="-1" data-original-title="#FFE79C"></button>
+                                        <button type="button" class="note-color-btn" style="background-color:#B5D6A5;" data-event="backColor" data-value="#B5D6A5"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#B5D6A5"></button>
+                                        <button
+                                          type="button" class="note-color-btn" style="background-color:#A5C6CE;" data-event="backColor" data-value="#A5C6CE"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#A5C6CE"></button>
+                                          <button type="button" class="note-color-btn" style="background-color:#9CC6EF;" data-event="backColor" data-value="#9CC6EF"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#9CC6EF"></button>
+                                          <button
+                                            type="button" class="note-color-btn" style="background-color:#B5A5D6;" data-event="backColor" data-value="#B5A5D6"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#B5A5D6"></button>
+                                            <button type="button" class="note-color-btn" style="background-color:#D6A5BD;" data-event="backColor" data-value="#D6A5BD"
+                                              title="" data-toggle="button" tabindex="-1" data-original-title="#D6A5BD"></button>
+                                      </div>
+                                      <div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#E76363;" data-event="backColor" data-value="#E76363"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#E76363"></button><button type="button"
+                                          class="note-color-btn" style="background-color:#F7AD6B;" data-event="backColor" data-value="#F7AD6B" title=""
+                                          data-toggle="button" tabindex="-1" data-original-title="#F7AD6B"></button><button type="button" class="note-color-btn"
+                                          style="background-color:#FFD663;" data-event="backColor" data-value="#FFD663" title="" data-toggle="button"
+                                          tabindex="-1" data-original-title="#FFD663"></button>
+                                        <button type="button" class="note-color-btn" style="background-color:#94BD7B;" data-event="backColor" data-value="#94BD7B"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#94BD7B"></button>
+                                        <button
+                                          type="button" class="note-color-btn" style="background-color:#73A5AD;" data-event="backColor" data-value="#73A5AD"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#73A5AD"></button>
+                                          <button type="button" class="note-color-btn" style="background-color:#6BADDE;" data-event="backColor" data-value="#6BADDE"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#6BADDE"></button>
+                                          <button
+                                            type="button" class="note-color-btn" style="background-color:#8C7BC6;" data-event="backColor" data-value="#8C7BC6"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#8C7BC6"></button>
+                                            <button type="button" class="note-color-btn" style="background-color:#C67BA5;" data-event="backColor" data-value="#C67BA5"
+                                              title="" data-toggle="button" tabindex="-1" data-original-title="#C67BA5"></button>
+                                      </div>
+                                      <div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#CE0000;" data-event="backColor" data-value="#CE0000"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#CE0000"></button><button type="button"
+                                          class="note-color-btn" style="background-color:#E79439;" data-event="backColor" data-value="#E79439" title=""
+                                          data-toggle="button" tabindex="-1" data-original-title="#E79439"></button><button type="button" class="note-color-btn"
+                                          style="background-color:#EFC631;" data-event="backColor" data-value="#EFC631" title="" data-toggle="button"
+                                          tabindex="-1" data-original-title="#EFC631"></button>
+                                        <button type="button" class="note-color-btn" style="background-color:#6BA54A;" data-event="backColor" data-value="#6BA54A"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#6BA54A"></button>
+                                        <button
+                                          type="button" class="note-color-btn" style="background-color:#4A7B8C;" data-event="backColor" data-value="#4A7B8C"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#4A7B8C"></button>
+                                          <button type="button" class="note-color-btn" style="background-color:#3984C6;" data-event="backColor" data-value="#3984C6"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#3984C6"></button>
+                                          <button
+                                            type="button" class="note-color-btn" style="background-color:#634AA5;" data-event="backColor" data-value="#634AA5"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#634AA5"></button>
+                                            <button type="button" class="note-color-btn" style="background-color:#A54A7B;" data-event="backColor" data-value="#A54A7B"
+                                              title="" data-toggle="button" tabindex="-1" data-original-title="#A54A7B"></button>
+                                      </div>
+                                      <div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#9C0000;" data-event="backColor" data-value="#9C0000"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#9C0000"></button><button type="button"
+                                          class="note-color-btn" style="background-color:#B56308;" data-event="backColor" data-value="#B56308" title=""
+                                          data-toggle="button" tabindex="-1" data-original-title="#B56308"></button><button type="button" class="note-color-btn"
+                                          style="background-color:#BD9400;" data-event="backColor" data-value="#BD9400" title="" data-toggle="button"
+                                          tabindex="-1" data-original-title="#BD9400"></button>
+                                        <button type="button" class="note-color-btn" style="background-color:#397B21;" data-event="backColor" data-value="#397B21"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#397B21"></button>
+                                        <button
+                                          type="button" class="note-color-btn" style="background-color:#104A5A;" data-event="backColor" data-value="#104A5A"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#104A5A"></button>
+                                          <button type="button" class="note-color-btn" style="background-color:#085294;" data-event="backColor" data-value="#085294"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#085294"></button>
+                                          <button
+                                            type="button" class="note-color-btn" style="background-color:#311873;" data-event="backColor" data-value="#311873"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#311873"></button>
+                                            <button type="button" class="note-color-btn" style="background-color:#731842;" data-event="backColor" data-value="#731842"
+                                              title="" data-toggle="button" tabindex="-1" data-original-title="#731842"></button>
+                                      </div>
+                                      <div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#630000;" data-event="backColor" data-value="#630000"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#630000"></button><button type="button"
+                                          class="note-color-btn" style="background-color:#7B3900;" data-event="backColor" data-value="#7B3900" title=""
+                                          data-toggle="button" tabindex="-1" data-original-title="#7B3900"></button><button type="button" class="note-color-btn"
+                                          style="background-color:#846300;" data-event="backColor" data-value="#846300" title="" data-toggle="button"
+                                          tabindex="-1" data-original-title="#846300"></button>
+                                        <button type="button" class="note-color-btn" style="background-color:#295218;" data-event="backColor" data-value="#295218"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#295218"></button>
+                                        <button
+                                          type="button" class="note-color-btn" style="background-color:#083139;" data-event="backColor" data-value="#083139"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#083139"></button>
+                                          <button type="button" class="note-color-btn" style="background-color:#003163;" data-event="backColor" data-value="#003163"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#003163"></button>
+                                          <button
+                                            type="button" class="note-color-btn" style="background-color:#21104A;" data-event="backColor" data-value="#21104A"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#21104A"></button>
+                                            <button type="button" class="note-color-btn" style="background-color:#4A1031;" data-event="backColor" data-value="#4A1031"
+                                              title="" data-toggle="button" tabindex="-1" data-original-title="#4A1031"></button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="btn-group">
+                                    <div class="note-palette-title">Foreground Color</div>
+                                    <div class="note-color-reset" data-event="foreColor" data-value="inherit" title="Reset">Reset to default</div>
+                                    <div class="note-color-palette" data-target-event="foreColor">
+                                      <div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#000000;" data-event="foreColor" data-value="#000000"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#000000"></button><button type="button"
+                                          class="note-color-btn" style="background-color:#424242;" data-event="foreColor" data-value="#424242" title=""
+                                          data-toggle="button" tabindex="-1" data-original-title="#424242"></button><button type="button" class="note-color-btn"
+                                          style="background-color:#636363;" data-event="foreColor" data-value="#636363" title="" data-toggle="button"
+                                          tabindex="-1" data-original-title="#636363"></button>
+                                        <button type="button" class="note-color-btn" style="background-color:#9C9C94;" data-event="foreColor" data-value="#9C9C94"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#9C9C94"></button>
+                                        <button
+                                          type="button" class="note-color-btn" style="background-color:#CEC6CE;" data-event="foreColor" data-value="#CEC6CE"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#CEC6CE"></button>
+                                          <button type="button" class="note-color-btn" style="background-color:#EFEFEF;" data-event="foreColor" data-value="#EFEFEF"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#EFEFEF"></button>
+                                          <button
+                                            type="button" class="note-color-btn" style="background-color:#F7F7F7;" data-event="foreColor" data-value="#F7F7F7"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#F7F7F7"></button>
+                                            <button type="button" class="note-color-btn" style="background-color:#FFFFFF;" data-event="foreColor" data-value="#FFFFFF"
+                                              title="" data-toggle="button" tabindex="-1" data-original-title="#FFFFFF"></button>
+                                      </div>
+                                      <div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#FF0000;" data-event="foreColor" data-value="#FF0000"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#FF0000"></button><button type="button"
+                                          class="note-color-btn" style="background-color:#FF9C00;" data-event="foreColor" data-value="#FF9C00" title=""
+                                          data-toggle="button" tabindex="-1" data-original-title="#FF9C00"></button><button type="button" class="note-color-btn"
+                                          style="background-color:#FFFF00;" data-event="foreColor" data-value="#FFFF00" title="" data-toggle="button"
+                                          tabindex="-1" data-original-title="#FFFF00"></button>
+                                        <button type="button" class="note-color-btn" style="background-color:#00FF00;" data-event="foreColor" data-value="#00FF00"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#00FF00"></button>
+                                        <button
+                                          type="button" class="note-color-btn" style="background-color:#00FFFF;" data-event="foreColor" data-value="#00FFFF"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#00FFFF"></button>
+                                          <button type="button" class="note-color-btn" style="background-color:#0000FF;" data-event="foreColor" data-value="#0000FF"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#0000FF"></button>
+                                          <button
+                                            type="button" class="note-color-btn" style="background-color:#9C00FF;" data-event="foreColor" data-value="#9C00FF"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#9C00FF"></button>
+                                            <button type="button" class="note-color-btn" style="background-color:#FF00FF;" data-event="foreColor" data-value="#FF00FF"
+                                              title="" data-toggle="button" tabindex="-1" data-original-title="#FF00FF"></button>
+                                      </div>
+                                      <div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#F7C6CE;" data-event="foreColor" data-value="#F7C6CE"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#F7C6CE"></button><button type="button"
+                                          class="note-color-btn" style="background-color:#FFE7CE;" data-event="foreColor" data-value="#FFE7CE" title=""
+                                          data-toggle="button" tabindex="-1" data-original-title="#FFE7CE"></button><button type="button" class="note-color-btn"
+                                          style="background-color:#FFEFC6;" data-event="foreColor" data-value="#FFEFC6" title="" data-toggle="button"
+                                          tabindex="-1" data-original-title="#FFEFC6"></button>
+                                        <button type="button" class="note-color-btn" style="background-color:#D6EFD6;" data-event="foreColor" data-value="#D6EFD6"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#D6EFD6"></button>
+                                        <button
+                                          type="button" class="note-color-btn" style="background-color:#CEDEE7;" data-event="foreColor" data-value="#CEDEE7"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#CEDEE7"></button>
+                                          <button type="button" class="note-color-btn" style="background-color:#CEE7F7;" data-event="foreColor" data-value="#CEE7F7"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#CEE7F7"></button>
+                                          <button
+                                            type="button" class="note-color-btn" style="background-color:#D6D6E7;" data-event="foreColor" data-value="#D6D6E7"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#D6D6E7"></button>
+                                            <button type="button" class="note-color-btn" style="background-color:#E7D6DE;" data-event="foreColor" data-value="#E7D6DE"
+                                              title="" data-toggle="button" tabindex="-1" data-original-title="#E7D6DE"></button>
+                                      </div>
+                                      <div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#E79C9C;" data-event="foreColor" data-value="#E79C9C"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#E79C9C"></button><button type="button"
+                                          class="note-color-btn" style="background-color:#FFC69C;" data-event="foreColor" data-value="#FFC69C" title=""
+                                          data-toggle="button" tabindex="-1" data-original-title="#FFC69C"></button><button type="button" class="note-color-btn"
+                                          style="background-color:#FFE79C;" data-event="foreColor" data-value="#FFE79C" title="" data-toggle="button"
+                                          tabindex="-1" data-original-title="#FFE79C"></button>
+                                        <button type="button" class="note-color-btn" style="background-color:#B5D6A5;" data-event="foreColor" data-value="#B5D6A5"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#B5D6A5"></button>
+                                        <button
+                                          type="button" class="note-color-btn" style="background-color:#A5C6CE;" data-event="foreColor" data-value="#A5C6CE"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#A5C6CE"></button>
+                                          <button type="button" class="note-color-btn" style="background-color:#9CC6EF;" data-event="foreColor" data-value="#9CC6EF"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#9CC6EF"></button>
+                                          <button
+                                            type="button" class="note-color-btn" style="background-color:#B5A5D6;" data-event="foreColor" data-value="#B5A5D6"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#B5A5D6"></button>
+                                            <button type="button" class="note-color-btn" style="background-color:#D6A5BD;" data-event="foreColor" data-value="#D6A5BD"
+                                              title="" data-toggle="button" tabindex="-1" data-original-title="#D6A5BD"></button>
+                                      </div>
+                                      <div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#E76363;" data-event="foreColor" data-value="#E76363"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#E76363"></button><button type="button"
+                                          class="note-color-btn" style="background-color:#F7AD6B;" data-event="foreColor" data-value="#F7AD6B" title=""
+                                          data-toggle="button" tabindex="-1" data-original-title="#F7AD6B"></button><button type="button" class="note-color-btn"
+                                          style="background-color:#FFD663;" data-event="foreColor" data-value="#FFD663" title="" data-toggle="button"
+                                          tabindex="-1" data-original-title="#FFD663"></button>
+                                        <button type="button" class="note-color-btn" style="background-color:#94BD7B;" data-event="foreColor" data-value="#94BD7B"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#94BD7B"></button>
+                                        <button
+                                          type="button" class="note-color-btn" style="background-color:#73A5AD;" data-event="foreColor" data-value="#73A5AD"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#73A5AD"></button>
+                                          <button type="button" class="note-color-btn" style="background-color:#6BADDE;" data-event="foreColor" data-value="#6BADDE"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#6BADDE"></button>
+                                          <button
+                                            type="button" class="note-color-btn" style="background-color:#8C7BC6;" data-event="foreColor" data-value="#8C7BC6"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#8C7BC6"></button>
+                                            <button type="button" class="note-color-btn" style="background-color:#C67BA5;" data-event="foreColor" data-value="#C67BA5"
+                                              title="" data-toggle="button" tabindex="-1" data-original-title="#C67BA5"></button>
+                                      </div>
+                                      <div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#CE0000;" data-event="foreColor" data-value="#CE0000"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#CE0000"></button><button type="button"
+                                          class="note-color-btn" style="background-color:#E79439;" data-event="foreColor" data-value="#E79439" title=""
+                                          data-toggle="button" tabindex="-1" data-original-title="#E79439"></button><button type="button" class="note-color-btn"
+                                          style="background-color:#EFC631;" data-event="foreColor" data-value="#EFC631" title="" data-toggle="button"
+                                          tabindex="-1" data-original-title="#EFC631"></button>
+                                        <button type="button" class="note-color-btn" style="background-color:#6BA54A;" data-event="foreColor" data-value="#6BA54A"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#6BA54A"></button>
+                                        <button
+                                          type="button" class="note-color-btn" style="background-color:#4A7B8C;" data-event="foreColor" data-value="#4A7B8C"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#4A7B8C"></button>
+                                          <button type="button" class="note-color-btn" style="background-color:#3984C6;" data-event="foreColor" data-value="#3984C6"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#3984C6"></button>
+                                          <button
+                                            type="button" class="note-color-btn" style="background-color:#634AA5;" data-event="foreColor" data-value="#634AA5"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#634AA5"></button>
+                                            <button type="button" class="note-color-btn" style="background-color:#A54A7B;" data-event="foreColor" data-value="#A54A7B"
+                                              title="" data-toggle="button" tabindex="-1" data-original-title="#A54A7B"></button>
+                                      </div>
+                                      <div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#9C0000;" data-event="foreColor" data-value="#9C0000"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#9C0000"></button><button type="button"
+                                          class="note-color-btn" style="background-color:#B56308;" data-event="foreColor" data-value="#B56308" title=""
+                                          data-toggle="button" tabindex="-1" data-original-title="#B56308"></button><button type="button" class="note-color-btn"
+                                          style="background-color:#BD9400;" data-event="foreColor" data-value="#BD9400" title="" data-toggle="button"
+                                          tabindex="-1" data-original-title="#BD9400"></button>
+                                        <button type="button" class="note-color-btn" style="background-color:#397B21;" data-event="foreColor" data-value="#397B21"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#397B21"></button>
+                                        <button
+                                          type="button" class="note-color-btn" style="background-color:#104A5A;" data-event="foreColor" data-value="#104A5A"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#104A5A"></button>
+                                          <button type="button" class="note-color-btn" style="background-color:#085294;" data-event="foreColor" data-value="#085294"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#085294"></button>
+                                          <button
+                                            type="button" class="note-color-btn" style="background-color:#311873;" data-event="foreColor" data-value="#311873"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#311873"></button>
+                                            <button type="button" class="note-color-btn" style="background-color:#731842;" data-event="foreColor" data-value="#731842"
+                                              title="" data-toggle="button" tabindex="-1" data-original-title="#731842"></button>
+                                      </div>
+                                      <div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#630000;" data-event="foreColor" data-value="#630000"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#630000"></button><button type="button"
+                                          class="note-color-btn" style="background-color:#7B3900;" data-event="foreColor" data-value="#7B3900" title=""
+                                          data-toggle="button" tabindex="-1" data-original-title="#7B3900"></button><button type="button" class="note-color-btn"
+                                          style="background-color:#846300;" data-event="foreColor" data-value="#846300" title="" data-toggle="button"
+                                          tabindex="-1" data-original-title="#846300"></button>
+                                        <button type="button" class="note-color-btn" style="background-color:#295218;" data-event="foreColor" data-value="#295218"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#295218"></button>
+                                        <button
+                                          type="button" class="note-color-btn" style="background-color:#083139;" data-event="foreColor" data-value="#083139"
+                                          title="" data-toggle="button" tabindex="-1" data-original-title="#083139"></button>
+                                          <button type="button" class="note-color-btn" style="background-color:#003163;" data-event="foreColor" data-value="#003163"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#003163"></button>
+                                          <button
+                                            type="button" class="note-color-btn" style="background-color:#21104A;" data-event="foreColor" data-value="#21104A"
+                                            title="" data-toggle="button" tabindex="-1" data-original-title="#21104A"></button>
+                                            <button type="button" class="note-color-btn" style="background-color:#4A1031;" data-event="foreColor" data-value="#4A1031"
+                                              title="" data-toggle="button" tabindex="-1" data-original-title="#4A1031"></button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="note-para btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="insertUnorderedList" tabindex="-1"
+                                data-original-title="Unordered list (CTRL+SHIFT+NUM7)"><i class="fa fa-list-ul icon-list-ul"></i></button>
+                              <button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="insertOrderedList" tabindex="-1" data-original-title="Ordered list (CTRL+SHIFT+NUM8)"><i class="fa fa-list-ol icon-list-ol"></i></button>
+                              <button
+                                type="button" class="btn btn-default btn-sm btn-small dropdown-toggle" data-toggle="dropdown" title="" tabindex="-1"
+                                data-original-title="Paragraph"><i class="fa fa-align-left icon-align-left"></i> <span class="caret"></span></button>
+                                <div class="dropdown-menu">
+                                  <div class="note-align btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="justifyLeft" tabindex="-1"
+                                      data-original-title="Align left (CTRL+SHIFT+L)"><i class="fa fa-align-left icon-align-left"></i></button>
+                                    <button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="justifyCenter" tabindex="-1" data-original-title="Align center (CTRL+SHIFT+E)"><i class="fa fa-align-center icon-align-center"></i></button>
+                                    <button
+                                      type="button" class="btn btn-default btn-sm btn-small" title="" data-event="justifyRight" tabindex="-1" data-original-title="Align right (CTRL+SHIFT+R)"><i class="fa fa-align-right icon-align-right"></i></button>
+                                      <button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="justifyFull" tabindex="-1" data-original-title="Justify full (CTRL+SHIFT+J)"><i class="fa fa-align-justify icon-align-justify"></i></button>
+                                  </div>
+                                  <div class="note-list btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="indent" tabindex="-1" data-original-title="Indent (CTRL+])"><i class="fa fa-indent icon-indent-right"></i></button>
+                                    <button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="outdent" tabindex="-1" data-original-title="Outdent (CTRL+[)"><i class="fa fa-outdent icon-indent-left"></i></button>
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="note-height btn-group"><button type="button" class="btn btn-default btn-sm btn-small dropdown-toggle" data-toggle="dropdown" title="" tabindex="-1"
+                                data-original-title="Line Height"><i class="fa fa-text-height icon-text-height"></i> <span class="caret"></span></button>
+                              <ul class="dropdown-menu">
+                                <li><a data-event="lineHeight" href="#" data-value="1"><i class="fa fa-check icon-ok"></i> 1.0</a></li>
+                                <li><a data-event="lineHeight" href="#" data-value="1.2"><i class="fa fa-check icon-ok"></i> 1.2</a></li>
+                                <li><a data-event="lineHeight" href="#" data-value="1.4"><i class="fa fa-check icon-ok"></i> 1.4</a></li>
+                                <li><a data-event="lineHeight" href="#" data-value="1.5"><i class="fa fa-check icon-ok"></i> 1.5</a></li>
+                                <li><a data-event="lineHeight" href="#" data-value="1.6"><i class="fa fa-check icon-ok"></i> 1.6</a></li>
+                                <li><a data-event="lineHeight" href="#" data-value="1.8"><i class="fa fa-check icon-ok"></i> 1.8</a></li>
+                                <li><a data-event="lineHeight" href="#" data-value="2"><i class="fa fa-check icon-ok"></i> 2.0</a></li>
+                                <li><a data-event="lineHeight" href="#" data-value="3"><i class="fa fa-check icon-ok"></i> 3.0</a></li>
+                              </ul>
+                            </div>
+                            <div class="note-table btn-group"><button type="button" class="btn btn-default btn-sm btn-small dropdown-toggle" data-toggle="dropdown" title="" tabindex="-1"
+                                data-original-title="Table"><i class="fa fa-table icon-table"></i> <span class="caret"></span></button>
+                              <ul class="note-table dropdown-menu">
+                                <div class="note-dimension-picker">
+                                  <div class="note-dimension-picker-mousecatcher" data-event="insertTable" data-value="1x1" style="width: 10em; height: 10em;"></div>
+                                  <div class="note-dimension-picker-highlighted"></div>
+                                  <div class="note-dimension-picker-unhighlighted"></div>
+                                </div>
+                                <div class="note-dimension-display"> 1 x 1 </div>
+                              </ul>
+                            </div>
+                            <div class="note-insert btn-group">
+                                <button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="showLinkDialog" data-hide="true" tabindex="-1" data-original-title="Link (CTRL+K)"><i class="fa fa-link icon-link"></i></button>
+                                <button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="showImageDialog" data-hide="true" tabindex="-1" data-original-title="Picture"><i class="fa fa-picture-o icon-picture"></i></button>
+                                <!--<button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="showVideoDialog" data-hide="true" tabindex="-1" data-original-title="Video"><i class="fa fa-youtube-play icon-play"></i></button>-->
+                                <button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="insertHorizontalRule" tabindex="-1" data-original-title="Insert Horizontal Rule (CTRL+ENTER)"><i class="fa fa-minus icon-hr"></i></button>
+                            </div>
+                            <div class="note-view btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="fullscreen" tabindex="-1" data-original-title="Full Screen"><i class="fa fa-arrows-alt icon-fullscreen"></i></button>
+                              <button
+                                type="button" class="btn btn-default btn-sm btn-small" title="" data-event="codeview" tabindex="-1" data-original-title="Code View"><i class="fa fa-code icon-code"></i></button>
+                            </div>
+                            <div class="note-help btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="showHelpDialog" data-hide="true"
+                                tabindex="-1" data-original-title="Help"><i class="fa fa-question icon-question"></i></button></div>
+                          </div>
+
+                          <textarea id="wysiwyg5" placeholder="Type text..." class="note-codable"></textarea>
+
+                          <div class="note-editable" contenteditable="true" style="height: 200px;">
+                            Lorem ipsum dolor Lorem ipsum dolor sit amet, dolore soluta abhorreant sed ne, cu vel quas dictas reprehendunt, cu mundi copiosae. Lorem ipsum dolor sit amet, dolore soluta abhorreant sed ne, cu vel quas dictas reprehendunt, cu mundi copiosae. dolore soluta abhorreant sed ne, cu vel quas dictas reprehendunt, cu mundi copiosae. Lorem ipsum dolor sit amet, dolore soluta abhorreant sed ne, cu vel quas dictas reprehendunt, cu mundi copiosae.
+                          </div>
+
+                          <div class="note-statusbar">
+                            <div class="note-resizebar">
+                              <div class="note-icon-bar"></div>
+                              <div class="note-icon-bar"></div>
+                              <div class="note-icon-bar"></div>
+                            </div>
+                          </div>
+                            
+                        </div> <!-- note-editor -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <!--<div class="modal-footer"></div>-->
+          </div>
+      </div>
+    </div>
+    <!-- END modal text -->
+
+    <!-- Modal image -->
+    <div class="modal fade fill-in" id="modalImageEditxx" tabindex="-1" role="dialog" aria-labelledby="modalImageEditxx" aria-hidden="true">
+      <div class="modal-dialog ">
+          <div class="modal-content">
+              <!--
+              <div class="modal-header">
+                  <h5 class="text-left p-b-5"><span class="semi-bold">News letter</span> signup</h5>
+              </div>
+              -->
+              <div class="modal-body">
+
+                <div class="jumbotron" data-pages="parallax">
+                  <div class="container-fluid container-fixed-lg">
+                    <div class="inner" style="transform: translateY(0px); opacity: 1;">
+                      <div class="container-md-height m-b-10">
+                        <div class="row row-md-height">
+                          <div class="col-lg-8 col-md-height col-md-6 col-top">
+                            <div class="panel panel-transparent">
+                              <div class="panel-heading" style="padding: 10px 0px;">
+                                <div class="panel-title"><i class="pg-image"></i> select an image</div>
+                              </div>
+                              <!--
+                              <div class="panel-body">
+                                <h3>Lorem ipsolr dolem sunor.</h3>
+                                <p>Lorem ipsum dolor sit amet, dolore soluta abhorreant sed ne, cu vel quas dictas reprehendunt, cu mundi copiosae sententiae ius. 
+                                  Blandit copiosae te vix, ut verear percipit pro, vix graecis facilisis ad.</p>
+                              </div>
+                              -->
+                            </div>
+                          </div>
+                          
+                          <div class="col-lg-4 col-md-5 col-md-height">
+                            <span class="pull-right p-t-15">
+                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                  <i class="pg-close"></i>
+                              </button>
+                            </span>                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="container-fluid container-fixed-lg bg-white">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <div class="panel-title fullwidth">Images
+                        <div class="pull-right">
+                            <input type="file" id="imageupload" class="btn" />
+                        </div>                        
+                      </div>
+                    </div>
+                    <div class="panel-body no-scroll">
+
+
+                      <div class="row margin-b-2">
+                        <div class="col-sm-4 col-md-2">
+                          <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                          <div class="caption">
+                            <a href="#">Image title</a>
+                          </div>
+                        </div>
+                        <div class="col-sm-4 col-md-2">
+                          <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                          <div class="caption">
+                            <a href="#">Image title</a>
+                          </div>
+                        </div>
+                        <div class="col-sm-4 col-md-2">
+                          <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                          <div class="caption">
+                            <a href="#">Image title</a>
+                          </div>
+                        </div>
+                        <div class="col-sm-4 col-md-2">
+                          <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                          <div class="caption">
+                            <a href="#">Image title</a>
+                          </div>
+                        </div>
+                        <div class="col-sm-4 col-md-2">
+                          <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                          <div class="caption margin-t-0">
+                            <a href="#">Image title</a>
+                          </div>
+                        </div>
+                        <div class="col-sm-4 col-md-2">
+                          <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                          <div class="caption">
+                            <a href="#">Image title</a>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.row -->
+
+                      <div class="row margin-b-2">
+                        <div class="col-sm-4 col-md-2">
+                          <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                          <div class="caption">
+                            <a href="#">Image title</a>
+                          </div>
+                        </div>
+                        <div class="col-sm-4 col-md-2">
+                          <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                          <div class="caption">
+                            <a href="#">Image title</a>
+                          </div>
+                        </div>
+                        <div class="col-sm-4 col-md-2">
+                          <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                          <div class="caption">
+                            <a href="#">Image title</a>
+                          </div>
+                        </div>
+                        <div class="col-sm-4 col-md-2">
+                          <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                          <div class="caption">
+                            <a href="#">Image title</a>
+                          </div>
+                        </div>
+                        <div class="col-sm-4 col-md-2">
+                          <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                          <div class="caption">
+                            <a href="#">Image title</a>
+                          </div>
+                        </div>
+                        <div class="col-sm-4 col-md-2">
+                          <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                          <div class="caption">
+                            <a href="#">Image title</a>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.row -->
+
+                      <div class="row margin-b-2">
+                        <div class="col-sm-4 col-md-2">
+                          <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                          <div class="caption">
+                            <a href="#">Image title</a>
+                          </div>
+                        </div>
+                        <div class="col-sm-4 col-md-2">
+                          <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                          <div class="caption">
+                            <a href="#">Image title</a>
+                          </div>
+                        </div>
+                        <div class="col-sm-4 col-md-2">
+                          <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                          <div class="caption">
+                            <a href="#">Image title</a>
+                          </div>
+                        </div>
+                        <div class="col-sm-4 col-md-2">
+                          <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                          <div class="caption">
+                            <a href="#">Image title</a>
+                          </div>
+                        </div>
+                        <div class="col-sm-4 col-md-2">
+                          <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                          <div class="caption">
+                            <a href="#">Image title</a>
+                          </div>
+                        </div>
+                        <div class="col-sm-4 col-md-2">
+                          <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                          <div class="caption">
+                            <a href="#">Image title</a>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.row -->
+
+                      <div class="row margin-b-2">
+                        <div class="col-sm-4 col-md-2">
+                          <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                          <div class="caption">
+                            <a href="#">Image title</a>
+                          </div>
+                        </div>
+                        <div class="col-sm-4 col-md-2">
+                          <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                          <div class="caption">
+                            <a href="#">Image title</a>
+                          </div>
+                        </div>
+                        <div class="col-sm-4 col-md-2">
+                          <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                          <div class="caption">
+                            <a href="#">Image title</a>
+                          </div>
+                        </div>
+                        <div class="col-sm-4 col-md-2">
+                          <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                          <div class="caption">
+                            <a href="#">Image title</a>
+                          </div>
+                        </div>
+                        <div class="col-sm-4 col-md-2">
+                          <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                          <div class="caption">
+                            <a href="#">Image title</a>
+                          </div>
+                        </div>
+                        <div class="col-sm-4 col-md-2">
+                          <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/300x300" alt=""></a>
+                          <div class="caption">
+                            <a href="#">Image title</a>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <!--<div class="modal-footer"></div>-->
+          </div>
+      </div>
+    </div>
+    <!-- END modal image -->    
+
+
+    <!-- BEGIN VENDOR JS -->
+    <script src="assets/plugins/pace/pace.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/modernizr.custom.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/bootstrapv3/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery/jquery-easy.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-unveil/jquery.unveil.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-bez/jquery.bez.min.js"></script>
+    <script src="assets/plugins/jquery-ios-list/jquery.ioslist.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/plugins/jquery-actual/jquery.actual.min.js"></script>
+    <script src="assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="assets/plugins/bootstrap3-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/summernote/js/summernote.min.js"></script>
+    <!-- END VENDOR JS -->
+    <!-- BEGIN CORE TEMPLATE JS -->
+    <script src="pages/js/pages.js" type="text/javascript"></script>
+    <!-- END CORE TEMPLATE JS -->
+    <!-- BEGIN PAGE LEVEL JS -->
+    <script src="assets/js/scripts.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL JS -->
+
+    <script>
+    $(document).ready(function() {
+
+      // Apply the notification plugin to the save button
+      $("#btnsave").click(function() {
+        event.preventDefault();
+
+        $('body').pgNotification({
+          style: 'simple',
+          message: 'Success. Lorem ipsolr dolem poler.',
+          position: 'top-right',
+          type: 'success',
+          showClose: true,
+          timeout: 4000
+        }).show();
+      });
+
+      // Set a timeout to hide the instructions collapse div
+      setTimeout(function(){
+          $('#collapseOne').collapse();
+      }, 6000);
+
+      // After instructions div collapsed, show down arrow
+      $('#collapseOne').on('hidden.bs.collapse', function () {
+        $('#collapsearrow').show();
+      })
+
+
+      // Bootsrap wyswig editir
+      $('#wysiwyg5').wysihtml5();
+      $('#summernote').summernote();
+            
+      
+    });
+    </script>
+
+  </body>
+</html>
